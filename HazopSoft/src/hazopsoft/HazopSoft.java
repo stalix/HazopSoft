@@ -6,6 +6,10 @@
 
 package hazopsoft;
 
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
 /**
  *
  * @author Rolando
@@ -16,7 +20,14 @@ public class HazopSoft {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            inicio ini =  new inicio();
+            ini.setLocationRelativeTo(null);
+            ini.setVisible(true);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
     }
     
 }
